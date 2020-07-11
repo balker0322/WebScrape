@@ -21,20 +21,6 @@ buttonXpath = '//*[@id="js-locator"]/div[2]/div[4]/div[2]/ul'
 resultsXpath = '//*[@id="js-locator"]/div[2]/div[4]/div[1]/div[2]/ol'
 resultSummaryCount = driver.find_element_by_class_name('ResultSummary-count').text
 
-pageResults = driver.find_element_by_xpath(resultsXpath).find_elements_by_tag_name('li')
-
-resultItem = pageResults[0]
-# name
-print(resultItem.find_element_by_class_name('LocationName-geo').text)
-# addressLine
-print(resultItem.find_element_by_class_name('c-address-street-1').text)
-# city
-print(resultItem.find_element_by_class_name('c-address-city').text)
-# state
-print(resultItem.find_element_by_class_name('c-address-state').text)
-# zipCode
-print(resultItem.find_element_by_class_name('c-address-postal-code').text)
-
 outputFile = open('result.csv', 'w', newline='')
 outputWriter = csv.writer(outputFile)
 
